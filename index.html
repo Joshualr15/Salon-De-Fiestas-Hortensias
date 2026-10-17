@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salón de Fiestas Hortensias | Salón y Jardín de Eventos en Ixtapaluca</title>
+  <meta name="description" content="Salón de Fiestas Hortensias (Salón Jardín Hortensias) en Izcalli Ixtapaluca. Salón, jardín, alberca, terraza y banquetes para bodas, XV años, bautizos y eventos de 50 a 200 invitados." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display para toque elegante y limpio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            hortensia: {
+              pink: '#DB2777',
+              pinkLight: '#FDF2F8',
+              gold: '#D97706',
+              goldDark: '#B45309',
+              goldLight: '#FFFBEB',
+              garden: '#059669',
+              gardenLight: '#ECFDF5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FFFFFF] text-[#0F172A] font-sans antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- 1. NAVBAR FIJA BLANCA -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-3">
+        
+        <!-- Logo / Nombre -->
+        <a href="#inicio" class="flex items-center gap-3 group shrink-0">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#D97706] shadow-sm transition-transform duration-200 group-hover:-translate-y-0.5">
+            <i data-lucide="flower-2" class="w-6 h-6 text-[#DB2777]"></i>
+          </div>
+          <div>
+            <span class="block font-serif text-xl font-bold tracking-tight text-[#0F172A]">Salón Hortensias</span>
+            <span class="block text-xs font-medium text-slate-500">Salón y Jardín • Ixtapaluca</span>
+          </div>
+        </a>
+
+        <!-- Reloj / Indicador en Vivo Dinámico (Desktop / Tablet) -->
+        <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20un%20evento"
+           target="_blank" rel="noopener noreferrer"
+           class="hidden xl:flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#ECFDF5] border border-emerald-200 text-xs font-semibold text-[#0F172A] hover:border-emerald-300 transition-all duration-200">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#059669]"></span>
+          </span>
+          <span id="nav-live-status">🟢 Agenda Abierta por WhatsApp - Aparta la fecha de tu evento</span>
+          <span class="text-slate-400">|</span>
+          <span id="nav-live-clock" class="font-mono text-[#059669] font-bold">--:--</span>
+        </a>
+
+        <!-- Menú Sencillo -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+          <a href="#inicio" class="hover:text-[#D97706] transition-colors">Inicio</a>
+          <a href="#servicios" class="hover:text-[#D97706] transition-colors">Servicios</a>
+          <a href="#instalaciones" class="hover:text-[#D97706] transition-colors">Instalaciones</a>
+          <a href="#opiniones" class="hover:text-[#D97706] transition-colors">Opiniones</a>
+          <a href="#ubicacion" class="hover:text-[#D97706] transition-colors">Ubicación</a>
+        </nav>
+
+        <!-- Botón Dorado / Rosa Cotizar Fecha por WhatsApp -->
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20un%20evento"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 bg-[#D97706] hover:bg-[#B45309] text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Cotizar Fecha por WhatsApp</span>
+          </a>
+
+          <!-- Botón Menú Móvil -->
+          <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" class="md:hidden p-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra Reloj en Vivo visible en Móvil/Tablet debajo de la barra principal -->
+      <div class="xl:hidden py-2 border-t border-slate-100 flex items-center justify-between text-xs">
+        <div class="flex items-center gap-2 font-medium text-slate-700 truncate">
+          <span id="mobile-live-status" class="truncate">🟢 Agenda Abierta por WhatsApp - Aparta la fecha de tu evento</span>
+        </div>
+        <span id="mobile-live-clock" class="font-mono font-bold text-[#059669] shrink-0 ml-2">--:--</span>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+      <a href="#inicio" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50">Inicio</a>
+      <a href="#servicios" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50">Servicios</a>
+      <a href="#instalaciones" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50">Instalaciones</a>
+      <a href="#opiniones" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50">Opiniones</a>
+      <a href="#ubicacion" class="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-800 hover:bg-slate-50">Ubicación</a>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION LUMINOSA (A 2 COLUMNAS) -->
+  <section id="inicio" class="bg-[#FFFFFF] pt-10 pb-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Columna Izquierda -->
+        <div class="lg:col-span-6 space-y-6">
+          <!-- Badge Solicitud -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 border border-amber-200 text-[#B45309] text-xs sm:text-sm font-semibold shadow-sm">
+            <span>⭐ 4.1 Estrellas (+157 reseñas) • Salón y Jardín de Eventos en Ixtapaluca</span>
+          </div>
+
+          <!-- Título Principal Limpio -->
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] leading-tight">
+            El Escenario Perfecto para tu Próximo Gran Evento en <span class="text-[#D97706]">Ixtapaluca</span>
+          </h1>
+
+          <!-- Texto Breve -->
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            Bodas, XV años, bautizos y fiestas familiares de <strong>50 a 200 invitados</strong> con paquetes a tu medida en un ambiente familiar, amplio y agradable en Col. Izcalli Ixtapaluca.
+          </p>
+
+          <!-- Puntos clave rápidos -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#059669] shrink-0"></i>
+              <span>Salón techado, jardín, alberca y terraza</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#059669] shrink-0"></i>
+              <span>Juegos infantiles y estacionamiento</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#059669] shrink-0"></i>
+              <span>Banquetes, taquizas y sonido profesional</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-[#059669] shrink-0"></i>
+              <span>Renta de espacio o paquetes todo incluido</span>
+            </div>
+          </div>
+
+          <!-- Dos Botones Claros -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20un%20evento"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2.5 bg-[#D97706] hover:bg-[#B45309] text-white font-bold text-base px-7 py-4 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-1">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Cotizar Fecha por WhatsApp (55 1922 1970)</span>
+            </a>
+            <a href="#ubicacion"
+               class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200 font-semibold text-base px-6 py-4 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1">
+              <i data-lucide="map-pin" class="w-5 h-5 text-[#DB2777]"></i>
+              <span>Ver Ubicación</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Fotografía Principal del Salón/Jardín Decorado -->
+        <div class="lg:col-span-6">
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-md">
+            <div class="grid grid-cols-12 gap-3">
+              <!-- Imagen principal grande -->
+              <div class="col-span-12 overflow-hidden rounded-xl border border-slate-100">
+                <img src="img/boda-jardin.jpg" alt="Bodas y eventos en el jardín de Salón de Fiestas Hortensias en Ixtapaluca" class="w-full h-72 sm:h-80 object-cover" />
+              </div>
+              <!-- Dos imágenes reales secundarias para mostrar salón y jardín desde el inicio -->
+              <div class="col-span-6 overflow-hidden rounded-xl border border-slate-100">
+                <img src="img/salon-decorado.jpg" alt="Salón interior decorado para evento en Salón de Fiestas Hortensias" class="w-full h-36 sm:h-44 object-cover" />
+              </div>
+              <div class="col-span-6 overflow-hidden rounded-xl border border-slate-100">
+                <img src="img/jardin-alberca-juegos.jpg" alt="Jardín amplio con área verde, alberca y juegos infantiles en Salón Hortensias" class="w-full h-36 sm:h-44 object-cover" />
+              </div>
+            </div>
+            <div class="mt-3 px-2 py-1.5 flex items-center justify-between text-xs text-slate-600">
+              <span class="font-semibold text-[#0F172A] flex items-center gap-1.5">
+                <i data-lucide="camera" class="w-4 h-4 text-[#D97706]"></i>
+                Instalaciones Reales • Salón Jardín Hortensias
+              </span>
+              <span class="text-[#059669] font-semibold">Capacidad: 50 a 200 personas</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CINTA DE BENEFICIOS (3 TARJETAS BLANCAS SIMPLES) -->
+  <section class="bg-[#F8FAFC] py-12 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Tarjeta 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4 transition-transform duration-200 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669] shrink-0">
+            <i data-lucide="trees" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-[#0F172A]">Salón, Jardín, Terraza y Estacionamiento</h2>
+            <p class="mt-1 text-sm text-slate-600">Amplios espacios interiores y al aire libre con área verde, alberca, carpa y juegos infantiles.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4 transition-transform duration-200 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#D97706] shrink-0">
+            <i data-lucide="star" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-[#0F172A]">Más de 157 Eventos Calificados en Google ⭐</h2>
+            <p class="mt-1 text-sm text-slate-600">Calificación verificada de 4.1 estrellas respaldada por familias e invitados en Ixtapaluca.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-start gap-4 transition-transform duration-200 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-pink-50 border border-pink-200 flex items-center justify-center text-[#DB2777] shrink-0">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-lg text-[#0F172A]">Paquetes Todo Incluido o Solo Renta de Espacio</h2>
+            <p class="mt-1 text-sm text-slate-600">Flexibilidad total para adaptarnos a las necesidades y presupuesto de tu celebración.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CATÁLOGO DE SERVICIOS Y PAQUETES (6 TARJETAS BLANCAS) -->
+  <section id="servicios" class="bg-[#FFFFFF] py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#B45309] text-xs font-bold uppercase tracking-wider mb-3">
+          Servicios y Espacios Principales
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#0F172A]">
+          Todo lo que Necesitas para una Celebración Inolvidable
+        </h2>
+        <p class="mt-3 text-base text-slate-600">
+          Atendemos eventos sociales e infantiles desde 50 hasta 200 invitados con atención cálida y personalizada.
+        </p>
+      </div>
+
+      <!-- Cuadrícula de 6 Tarjetas Blancas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Servicio 1 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669] mb-5">
+              <i data-lucide="home" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">1. Renta de Salón, Jardín y Terraza</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Amplios espacios interiores y al aire libre con carpa, área verde, juegos infantiles y estacionamiento (50 a 200 personas).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20sobre%20la%20Renta%20de%20Sal%C3%B3n,%20Jard%C3%ADn%20y%20Terraza"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink-50 border border-pink-200 flex items-center justify-center text-[#DB2777] mb-5">
+              <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">2. Bodas, XV Años y Bautizos</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Organización integral para que tu evento familiar sea inolvidable, con pista de baile iluminada.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20para%20un%20evento%20(Boda,%20XV%20A%C3%B1os%20o%20Bautizo)"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#D97706] mb-5">
+              <i data-lucide="utensils-crossed" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">3. Banquetes y Taquizas</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Opciones de menús tradicionales, platillos en tiempos o taquizas completas adaptadas a tu presupuesto.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20sobre%20sus%20Banquetes%20y%20Taquizas"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-pink-50 border border-pink-200 flex items-center justify-center text-[#DB2777] mb-5">
+              <i data-lucide="flower" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">4. Mobiliario y Decoración Completa</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Mesas, sillas vestidas con mantelería fina, cubremantel, centros de mesa y decoración con globos o flores.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20sobre%20Mobiliario%20y%20Decoraci%C3%B3n"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#D97706] mb-5">
+              <i data-lucide="music" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">5. Música, Sonido, Luces y Animación</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Equipo de audio profesional, iluminación para fiesta, proyección de video, batucadas y animadores.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20sobre%20M%C3%BAsica,%20Sonido%20y%20Animaci%C3%B3n"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Servicio 6 -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669] mb-5">
+              <i data-lucide="users" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0F172A] mb-2">6. Servicio de Meseros y Coordinación</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Personal atento y capacitado para atender a tus invitados de principio a fin.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100">
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20pedir%20informes%20sobre%20Servicio%20de%20Meseros%20y%20Coordinaci%C3%B3n"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 text-sm font-bold text-[#D97706] hover:text-[#B45309]">
+              <span>Pedir informes</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GALERÍA DE EVENTOS E INSTALACIONES -->
+  <section id="instalaciones" class="bg-[#F8FAFC] py-16 lg:py-20 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-bold uppercase tracking-wider mb-3">
+            Conoce Nuestras Instalaciones Reales
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#0F172A]">
+            Galería de Eventos e Instalaciones
+          </h2>
+          <p class="mt-2 text-base text-slate-600">
+            Fotografías reales de nuestro jardín, salón techado, área de alberca, mesas decoradas y escenario musical.
+          </p>
+        </div>
+        <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20las%20fotos%20de%20sus%20instalaciones%20y%20me%20gustar%C3%ADa%20agendar%20una%20visita%20para%20conocer%20el%20sal%C3%B3n"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200 font-semibold text-sm px-5 py-3 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1 shrink-0">
+          <i data-lucide="calendar-check" class="w-4 h-4 text-[#D97706]"></i>
+          <span>Agendar visita previa cita</span>
+        </a>
+      </div>
+
+      <!-- Cuadrícula limpia de fotografías sin filtros oscuros -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto Real 1: Salón Interior y Mesas Decoradas -->
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <div class="overflow-hidden rounded-xl border border-slate-100">
+            <img src="img/salon-decorado.jpg" alt="Salón amplio con mesas vestidas y arreglos florales en Salón Hortensias" class="w-full h-64 object-cover" />
+          </div>
+          <div class="p-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#DB2777]">Salón Techado y Mobiliario</span>
+            <h3 class="font-bold text-base text-[#0F172A] mt-0.5">Mesas Vestidas y Arreglos Florales</h3>
+            <p class="text-xs text-slate-600 mt-1">Amplio salón iluminado con mantelería fina y espacio cómodo para tus invitados.</p>
+          </div>
+        </div>
+
+        <!-- Foto Real 2: Bodas y Jardín Principal -->
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <div class="overflow-hidden rounded-xl border border-slate-100">
+            <img src="img/boda-jardin.jpg" alt="Bodas y sesiones fotográficas en el jardín de Salón de Fiestas Hortensias" class="w-full h-64 object-cover" />
+          </div>
+          <div class="p-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#059669]">Eventos Sociales</span>
+            <h3 class="font-bold text-base text-[#0F172A] mt-0.5">Jardín Natural para Bodas y XV Años</h3>
+            <p class="text-xs text-slate-600 mt-1">Áreas verdes cuidadas ideales para ceremonias, recepciones y fotografías inolvidables.</p>
+          </div>
+        </div>
+
+        <!-- Foto Real 3: Jardín, Alberca, Carpa y Juegos Infantiles -->
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <div class="overflow-hidden rounded-xl border border-slate-100">
+            <img src="img/jardin-alberca-juegos.jpg" alt="Vista panorámica del jardín, alberca, carpa y juegos infantiles" class="w-full h-64 object-cover" />
+          </div>
+          <div class="p-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#D97706]">Ambiente Familiar</span>
+            <h3 class="font-bold text-base text-[#0F172A] mt-0.5">Jardín, Carpa y Juegos Infantiles</h3>
+            <p class="text-xs text-slate-600 mt-1">Espacio al aire libre súper bien distribuido con área infantil y mesas con sombrilla.</p>
+          </div>
+        </div>
+
+        <!-- Foto Real 4: Área de Alberca y Terraza Soleada -->
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-sm transition-all duration-200 hover:-translate-y-1">
+          <div class="overflow-hidden rounded-xl border border-slate-100">
+            <img src="img/alberca-terraza.jpg" alt="Alberca limpia y terraza con sombrillas en Salón Jardín Hortensias" class="w-full h-64 object-cover" />
+          </div>
+          <div class="p-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#059669]">Área al Aire Libre</span>
+            <h3 class="font-bold text-base text-[#0F172A] mt-0.5">Alberca y Terraza de Descanso</h3>
+            <p class="text-xs text-slate-600 mt-1">Instalaciones limpias y soleadas para eventos diurnos, convivios y fiestas familiares.</p>
+          </div>
+        </div>
+
+        <!-- Foto Real 5: Pista de Baile, Escenario, Luces y Música en Vivo -->
+        <div class="bg-white rounded-2xl p-3 border border-slate-200 shadow-sm transition-all duration-200 hover:-translate-y-1 md:col-span-2 lg:col-span-2">
+          <div class="overflow-hidden rounded-xl border border-slate-100">
+            <img src="img/pista-baile-musica.png" alt="Escenario, pista de baile iluminada y música en vivo en Salón de Fiestas Hortensias" class="w-full h-64 sm:h-72 object-cover" />
+          </div>
+          <div class="p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-[#D97706]">Música, Sonido e Iluminación</span>
+              <h3 class="font-bold text-base text-[#0F172A] mt-0.5">Escenario y Pista de Baile Iluminada</h3>
+              <p class="text-xs text-slate-600 mt-1">Espacio amplio para grupos musicales en vivo, equipo de sonido profesional, luces y baile.</p>
+            </div>
+            <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20mi%20evento"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-50 border border-amber-200 text-[#B45309] font-bold text-xs hover:bg-amber-100 transition-colors shrink-0">
+              <span>Consultar disponibilidad</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SECCIÓN DE OPINIONES DE GOOGLE MAPS -->
+  <section id="opiniones" class="bg-[#FFFFFF] py-16 lg:py-20 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Encabezado y Resumen de Calificación Real -->
+      <div class="bg-[#F8FAFC] rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm mb-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-5">
+          <div class="bg-white px-6 py-4 rounded-2xl border border-slate-200 shadow-sm text-center shrink-0">
+            <div class="text-4xl font-extrabold text-[#0F172A]">4.1</div>
+            <div class="flex items-center justify-center gap-0.5 text-[#D97706] my-1">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-amber-300">★</span>
+            </div>
+            <div class="text-xs font-semibold text-slate-500">+157 reseñas reales</div>
+          </div>
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#B45309] text-xs font-bold uppercase tracking-wider mb-2">
+              Opiniones Verificadas en Google Maps
+            </span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#0F172A]">
+              Lo que Dicen las Familias sobre Salón de Fiestas Hortensias
+            </h2>
+            <p class="text-sm text-slate-600 mt-1">
+              Más de 157 valoraciones locales respaldan nuestro servicio, limpieza y amplitud en Ixtapaluca.
+            </p>
+          </div>
+        </div>
+
+        <a href="https://www.google.com/maps/place/Salon+De+Fiestas+Hortensias,+56560,+Hortencias+30,+Izcalli+Ixtapaluca,+56560+Ixtapaluca,+M%C3%A9x./data=!4m2!3m1!1s0x85ce1dddd42c923d:0x976792fccc1439bf"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200 font-semibold text-sm px-5 py-3.5 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1 shrink-0">
+          <i data-lucide="external-link" class="w-4 h-4 text-[#D97706]"></i>
+          <span>Ver ficha oficial en Google Maps</span>
+        </a>
+      </div>
+
+      <!-- Tarjetas Limpias con Testimonios Reales -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Reseña 1 (5 estrellas) -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm transition-transform duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-[#D97706] text-lg" aria-label="5 de 5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200">
+                Reseña 5 Estrellas • Google Maps
+              </span>
+            </div>
+            <blockquote class="text-base sm:text-lg text-[#0F172A] font-medium leading-relaxed">
+              "Un excelente lugar para hacer fiestas familiares, el área de jardín es muy bonita, limpia y el espacio está súper bien distribuido."
+            </blockquote>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center font-bold text-[#B45309] text-sm">
+              GM
+            </div>
+            <div>
+              <div class="text-sm font-bold text-[#0F172A]">Cliente Verificado</div>
+              <div class="text-xs text-slate-500">Evento Familiar en Salón de Fiestas Hortensias</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reseña 2 (5 estrellas) -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm transition-transform duration-200 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-1 text-[#D97706] text-lg" aria-label="5 de 5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200">
+                Reseña 5 Estrellas • Google Maps
+              </span>
+            </div>
+            <blockquote class="text-base sm:text-lg text-[#0F172A] font-medium leading-relaxed">
+              "Muy buen servicio y atención de los encargados y meseros. Hicimos nuestro evento ahí y todos los invitados quedaron encantados."
+            </blockquote>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-pink-50 border border-pink-200 flex items-center justify-center font-bold text-[#DB2777] text-sm">
+              GM
+            </div>
+            <div>
+              <div class="text-sm font-bold text-[#0F172A]">Anfitrión Verificado</div>
+              <div class="text-xs text-slate-500">Evento Social en Salón Jardín Hortensias</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. UBICACIÓN, HORARIOS Y RELOJ EN VIVO -->
+  <section id="ubicacion" class="bg-[#F8FAFC] py-16 lg:py-20 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#B45309] text-xs font-bold uppercase tracking-wider mb-3">
+          Visítanos y Aparta tu Fecha
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[#0F172A]">
+          Ubicación, Horarios y Atención en Vivo
+        </h2>
+        <p class="mt-2 text-base text-slate-600">
+          Estamos ubicados en el corazón de Izcalli Ixtapaluca. Cotiza tu fecha hoy mismo por WhatsApp.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Columna Izquierda: Dirección, Horarios, Widget Reloj en Vivo y Botón WhatsApp -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Widget del Reloj en Vivo (Estado de Eventos y Cotizaciones) -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="clock" class="w-5 h-5 text-[#059669]"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Reloj en Vivo • Ixtapaluca, Méx.</span>
+              </div>
+              <span id="card-live-clock" class="font-mono text-base font-bold text-[#0F172A] bg-slate-100 px-3 py-1 rounded-lg">--:--:--</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#ECFDF5] border border-emerald-200">
+              <p id="card-live-status" class="text-sm sm:text-base font-bold text-[#0F172A]">
+                🟢 Agenda Abierta por WhatsApp - Aparta la fecha de tu evento
+              </p>
+              <p id="card-live-subtext" class="text-xs text-slate-600 mt-1">
+                Cotizaciones e informes disponibles toda la semana vía WhatsApp o llamada previa cita.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Dirección y Horarios Oficiales -->
+          <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm space-y-6">
+            
+            <!-- Dirección Exacta -->
+            <div class="flex items-start gap-4">
+              <div class="w-11 h-11 rounded-xl bg-pink-50 border border-pink-200 flex items-center justify-center text-[#DB2777] shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-[#0F172A]">Dirección Exacta</h3>
+                <p class="text-sm text-slate-600 mt-1">
+                  Calle Hortencias 30, Col. Izcalli Ixtapaluca (Jardines de Izcalli), CP 56560, Ixtapaluca, Estado de México.
+                </p>
+                <a href="https://www.google.com/maps/place/Salon+De+Fiestas+Hortensias,+56560,+Hortencias+30,+Izcalli+Ixtapaluca,+56560+Ixtapaluca,+M%C3%A9x./data=!4m2!3m1!1s0x85ce1dddd42c923d:0x976792fccc1439bf"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1 text-xs font-bold text-[#D97706] hover:text-[#B45309] mt-2">
+                  <span>Abrir cómo llegar en Google Maps</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Horarios Oficiales -->
+            <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+              <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#D97706] shrink-0">
+                <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+              </div>
+              <div class="w-full">
+                <h3 class="font-bold text-base text-[#0F172A]">Horarios Oficiales de Eventos y Atención</h3>
+                <div class="mt-2 space-y-1.5 text-sm">
+                  <div class="flex items-center justify-between py-1 border-b border-slate-100">
+                    <span class="font-semibold text-[#0F172A]">Viernes, Sábado y Domingo:</span>
+                    <span class="font-bold text-[#059669]">6:00 a.m. a 12:00 a.m.</span>
+                  </div>
+                  <p class="text-xs text-slate-600 pt-1">
+                    * Cotizaciones e informes disponibles toda la semana vía WhatsApp o llamada previa cita.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teléfono y Botón de WhatsApp -->
+            <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+              <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669] shrink-0">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div class="w-full">
+                <h3 class="font-bold text-base text-[#0F172A]">Teléfono y WhatsApp Oficial</h3>
+                <p class="text-lg font-extrabold text-[#0F172A] mt-0.5">55 1922 1970</p>
+                <div class="mt-4 flex flex-col sm:flex-row gap-3">
+                  <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20un%20evento"
+                     target="_blank" rel="noopener noreferrer"
+                     class="inline-flex items-center justify-center gap-2 bg-[#059669] hover:bg-emerald-700 text-white font-bold text-sm px-5 py-3.5 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1 w-full sm:w-auto">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>Enviar WhatsApp al 55 1922 1970</span>
+                  </a>
+                  <a href="tel:5519221970"
+                     class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-[#0F172A] border border-slate-200 font-semibold text-sm px-5 py-3.5 rounded-xl shadow-sm transition-all duration-200 hover:-translate-y-1 w-full sm:w-auto">
+                    <i data-lucide="phone" class="w-4 h-4 text-[#D97706]"></i>
+                    <span>Llamar ahora</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Mapa Interactivo de Google Maps -->
+        <div class="lg:col-span-6">
+          <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-md">
+            <div class="rounded-xl overflow-hidden border border-slate-200 h-[440px] sm:h-[500px] w-full">
+              <iframe
+                title="Mapa de ubicación de Salón de Fiestas Hortensias en Hortencias 30, Izcalli Ixtapaluca"
+                src="https://www.google.com/maps?q=Salon+De+Fiestas+Hortensias,+Hortencias+30,+Izcalli+Ixtapaluca,+56560+Ixtapaluca,+M%C3%A9x.&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="mt-3 px-2 py-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-600">
+              <span>📍 Calle Hortencias 30, Col. Izcalli Ixtapaluca, CP 56560, Ixtapaluca, Méx.</span>
+              <a href="https://www.google.com/maps/place/Salon+De+Fiestas+Hortensias,+56560,+Hortencias+30,+Izcalli+Ixtapaluca,+56560+Ixtapaluca,+M%C3%A9x./data=!4m2!3m1!1s0x85ce1dddd42c923d:0x976792fccc1439bf"
+                 target="_blank" rel="noopener noreferrer"
+                 class="font-bold text-[#D97706] hover:underline shrink-0">
+                Ver en Google Maps →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER LIMPIO -->
+  <footer class="bg-[#FFFFFF] border-t border-slate-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-100">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
+              <i data-lucide="flower-2" class="w-5 h-5 text-[#DB2777]"></i>
+            </div>
+            <span class="font-serif text-xl font-bold text-[#0F172A]">Salón de Fiestas Hortensias</span>
+          </div>
+          <p class="text-sm text-slate-600 mt-2 max-w-md">
+            Salón Jardín Hortensias • Eventos sociales e infantiles de 50 a 200 invitados en Calle Hortencias 30, Col. Izcalli Ixtapaluca, CP 56560, Estado de México.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-5 text-sm font-semibold text-slate-700">
+          <a href="#inicio" class="hover:text-[#D97706]">Inicio</a>
+          <a href="#servicios" class="hover:text-[#D97706]">Servicios</a>
+          <a href="#instalaciones" class="hover:text-[#D97706]">Instalaciones</a>
+          <a href="#opiniones" class="hover:text-[#D97706]">Opiniones</a>
+          <a href="#ubicacion" class="hover:text-[#D97706]">Ubicación</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© <span id="current-year">2026</span> Salón de Fiestas Hortensias (Salón Jardín Hortensias). Todos los derechos reservados.</p>
+        <p>Teléfono y WhatsApp Oficial: <a href="tel:5519221970" class="font-bold text-[#0F172A] hover:text-[#D97706]">55 1922 1970</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="https://wa.me/525519221970?text=Hola%20Sal%C3%B3n%20de%20Fiestas%20Hortensias,%20vi%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20cotizar%20una%20fecha%20para%20un%20evento"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Cotizar por WhatsApp al 55 1922 1970"
+     class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2.5 bg-[#059669] hover:bg-emerald-700 text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-md border border-white/80 transition-all duration-200 hover:-translate-y-1">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span class="hidden sm:inline">Cotizar por WhatsApp</span>
+  </a>
+
+  <!-- SCRIPTS: ÍCONOS, MENÚ MÓVIL Y RELOJ EN VIVO DINÁMICO -->
+  <script>
+    // Inicializar íconos Lucide
+    lucide.createIcons();
+
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Reloj en Vivo Dinámico (Estado de Eventos y Cotizaciones)
+    function updateHortensiasLiveClock() {
+      const now = new Date();
+      const day = now.getDay(); // 0 = Domingo, 1 = Lunes, ..., 5 = Viernes, 6 = Sábado
+      const hours = now.getHours();
+
+      const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+      const nombreDia = diasSemana[day];
+
+      // Formatear hora limpia (ej. 12:15 p.m.)
+      const timeShort = now.toLocaleTimeString('es-MX', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+      const timeFull = now.toLocaleTimeString('es-MX', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+
+      // Días principales de eventos: Viernes (5), Sábado (6) y Domingo (0) de 6:00 a.m. (6) a 12:00 a.m. (24)
+      const isWeekendEventDay = (day === 5 || day === 6 || day === 0);
+      const isActiveEventHours = (hours >= 6 && hours <= 23);
+
+      let statusMessage = '';
+      let subMessage = '';
+
+      if (isWeekendEventDay && isActiveEventHours) {
+        statusMessage = '🟢 Días de Eventos y Atención Activa - ¡Cotiza tu fecha hoy!';
+        subMessage = `Hoy ${nombreDia} estamos en horario de eventos y atención (6:00 a.m. a 12:00 a.m.). ¡Escríbenos por WhatsApp!`;
+      } else {
+        statusMessage = '🟢 Agenda Abierta por WhatsApp - Aparta la fecha de tu evento';
+        subMessage = `Hoy ${nombreDia} recibimos cotizaciones e informes por WhatsApp al 55 1922 1970 o agenda una visita previa cita.`;
+      }
+
+      // Actualizar elementos del DOM
+      const navStatus = document.getElementById('nav-live-status');
+      const navClock = document.getElementById('nav-live-clock');
+      const mobileStatus = document.getElementById('mobile-live-status');
+      const mobileClock = document.getElementById('mobile-live-clock');
+      const cardStatus = document.getElementById('card-live-status');
+      const cardClock = document.getElementById('card-live-clock');
+      const cardSubtext = document.getElementById('card-live-subtext');
+
+      if (navStatus) navStatus.textContent = statusMessage;
+      if (navClock) navClock.textContent = `${nombreDia} ${timeShort}`;
+      if (mobileStatus) mobileStatus.textContent = statusMessage;
+      if (mobileClock) mobileClock.textContent = timeShort;
+      if (cardStatus) cardStatus.textContent = statusMessage;
+      if (cardClock) cardClock.textContent = `${nombreDia}, ${timeFull}`;
+      if (cardSubtext) cardSubtext.textContent = subMessage;
+    }
+
+    updateHortensiasLiveClock();
+    setInterval(updateHortensiasLiveClock, 1000);
+
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
